@@ -1,0 +1,38 @@
+{
+  "name": "webpack-practice",
+  "version": "1.0.0",
+  "description": "a demo to set up a react webapp",
+  "main": "app.js",
+  "scripts": {
+    "test": "test",
+    "build": "webpack --config build/webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacklovepdf/webpack-Notes.git"
+  },
+  "keywords": [
+    "webpack",
+    "react",
+    "spa"
+  ],
+  "author": "jacklovepdf",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jacklovepdf/webpack-Notes/issues"
+  },
+  "homepage": "https://github.com/jacklovepdf/webpack-Notes#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "webpack": "^3.10.0"
+  },
+  "dependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2015-loose": "^8.0.0",
+    "babel-preset-react": "^6.24.1",
+    "html-webpack-plugin": "^2.30.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  }
+}
