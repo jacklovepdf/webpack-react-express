@@ -80,5 +80,13 @@ options config: 指定webpack的配置文件；
 presets指定babel支持的语法
 
 
+6. rimraf 一个基于nodejs的包，用于删除文件或者文件夹；
+
+
+
+7. 客户端渲染与服务器端渲染
+
+
+
 
  
