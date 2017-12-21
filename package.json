@@ -8,7 +8,8 @@
     "clear": "rimraf dist",
     "build:client": "webpack --config build/webpack.config.client.js",
     "build:server": "webpack --config build/webpack.config.server.js",
-    "start": "npm run clear && npm run build:client && npm run build:server"
+    "build": "npm run clear && npm run build:client && npm run build:server",
+    "start": "node ./src/server/app.js"
   },
   "repository": {
     "type": "git",
