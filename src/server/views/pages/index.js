@@ -6,6 +6,6 @@
 
 import React from 'react';
 
-import App from './home';
+import App from './home/index';
 
-export default <App/>
+export default <App />

@@ -7,7 +7,7 @@
 const express = require('express');
 const path = require('path');
 const ReactDOMServer = require('react-dom/server');
-const serverTemplate = require('../../dist/app.server.js').default; //warning: require module which export
+const serverTemplate = require('../../dist/app.server').default; //warning: require module which export
 const fs = require('fs');
 
 const app = express();
@@ -17,8 +17,11 @@ const clientHtmlString = fs.readFileSync(path.join(__dirname, '../../dist/index.
 app.use('/public', express.static(path.join(__dirname, '../../dist')));
 
 app.get('*', function (req, res) {
+    console.log("serverTemplate====>", serverTemplate);
     const serverHtmlString = ReactDOMServer.renderToString(serverTemplate);
-    res.send(clientHtmlString.replace('<app></app>', serverHtmlString));
+
+    console.log("serverHtmlString=====>", serverHtmlString);
+    res.send(clientHtmlString.replace('<server></server>', serverHtmlString));
 });
 
 app.listen(8088, function () {
