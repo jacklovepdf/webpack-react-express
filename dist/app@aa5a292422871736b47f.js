@@ -18302,7 +18302,7 @@ var App = function (_Component) {
         return _react2.default.createElement(
             'div',
             null,
-            'This is a app!'
+            'render by client!'
         );
     };
 

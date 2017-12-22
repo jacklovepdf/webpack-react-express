@@ -9,7 +9,7 @@ export default class App extends Component {
 
     render(){
         return (
-            <div>This is a app!</div>
+            <div>render by client!</div>
         )
     }
 }
