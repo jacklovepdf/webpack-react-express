@@ -91,6 +91,9 @@ presets指定babel支持的语法
 8.AMD , CMD 和commonjs
 
 
+9.cross-env
+
+
 
 
  
