@@ -13,7 +13,7 @@ const fs = require('fs');
 const app = express();
 const clientHtmlString = fs.readFileSync(path.join(__dirname, '../../dist/index.html'), 'utf8');
 
-//中间件
+//express.static中间件,提供静态资源访问；
 app.use('/public', express.static(path.join(__dirname, '../../dist')));
 
 app.get('*', function (req, res) {
