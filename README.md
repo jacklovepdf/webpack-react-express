@@ -88,10 +88,19 @@ presets指定babel支持的语法
 
 
 
-8.AMD , CMD 和commonjs
+8. AMD , CMD 和commonjs
 
 
-9.cross-env
+9. cross-env
+
+10. memory-fs
+内存读写
+
+
+11. webpack-dev-server
+    DevServer启动的服务提供的资源并没有打包出来放在此盘中，而是存在内存中。
+for more information, you can read the official doc。https://webpack.js.org/configuration/dev-server/
+
 
 
 
