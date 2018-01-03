@@ -2,10 +2,7 @@
  * Created by chengyong.lin on 17/12/21.
  */
 
-'use strict';
-
-import React from 'react';
-
-import App from './home/index';
+import React from 'react' // eslint-disable-line
+import App from './home/index' // eslint-disable-line
 
 export default <App />

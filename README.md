@@ -58,9 +58,7 @@ Since you can use a plugin multiple times in a config for different purposes, yo
 
 2.为什么要使用绝对路径
 
-
 3.output 中的path宇publicPath的区别
-
 
 4.webpack --config build/webpack.config.js
 options config: 指定webpack的配置文件；
@@ -104,5 +102,13 @@ for more information, you can read the official doc。https://webpack.js.org/con
 
 
 
+12. eslint
 
- 
+
+
+13. 关于editorconfig
+  editorconfig的作用是帮助开发着在不同的编辑器或者IDE之间定义和维护一致的代码风格。
+
+14. 提交代码之前进行代码风格检测
+
+
