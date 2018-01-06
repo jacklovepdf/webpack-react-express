@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader' // eslint-disable-line
-import App from './App.jsx';
+import App from './views/App'
 
 const rootEle = document.getElementById('client');
 const render = (Component) => {
@@ -16,8 +16,8 @@ render(App);
 
 // Webpack Hot Module Replacement API
 if (module.hot) {
-  module.hot.accept('./App.jsx', () => {
-    const nextApp = require('./App.jsx').default; // eslint-disable-line
+  module.hot.accept('./views/App', () => {
+    const nextApp = require('./views/App').default; // eslint-disable-line
     render(nextApp)
   })
 }

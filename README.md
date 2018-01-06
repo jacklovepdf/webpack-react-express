@@ -112,3 +112,14 @@ for more information, you can read the official doc。https://webpack.js.org/con
 14. 提交代码之前进行代码风格检测
 
 
+
+15.webpack默认情况下只能识别js文件，为了能够自动识别jsx文件，我们可以添加下面的配置，使得webpack能够自动识别jsx文件。
+
+```
+    resolve: {
+      extensions: ['.js', '.jsx']
+    },
+```
+
+
+16. 
