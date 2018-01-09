@@ -18,7 +18,7 @@ export default () => (
         <li key="menu-detail"><Link to="/detail">Detail</Link></li>
       </ul>
       <hr />
-      <Route path="/" component={Home} key="home" />
+      <Route path="/" component={Home} key="home" exact />
       <Route path="/detail" component={Detail} key="detail" />
     </div>
   </BrowserRouter>

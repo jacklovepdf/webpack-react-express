@@ -122,4 +122,15 @@ for more information, you can read the official doc。https://webpack.js.org/con
 ```
 
 
-16. 
+16. https://github.com/loganfsmyth/babel-plugin-transform-decorators-legacy
+
+17. react context
+
+
+17. https://babeljs.io/docs/plugins/preset-stage-1/
+
+18. template string
+
+
+
+

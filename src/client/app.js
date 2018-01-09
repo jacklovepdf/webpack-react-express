@@ -1,13 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader' // eslint-disable-line
+import {
+  Provider,
+} from 'mobx-react'
 import App from './views/App'
+import appState from './store/appState'
 
 const rootEle = document.getElementById('client');
 const render = (Component) => {
   ReactDOM.render(
     <AppContainer>
-      <Component />
+      <Provider appState={appState}>
+        <Component />
+      </Provider>
     </AppContainer>,
     rootEle,
   )

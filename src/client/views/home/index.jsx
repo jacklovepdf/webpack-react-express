@@ -3,7 +3,16 @@
  */
 
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import {
+  inject,
+  observer,
+} from 'mobx-react'
+import {
+  AppState
+} from '../../store/appState'
 
+@inject('appState') @observer
 export default class Home extends Component {
   componentDidMount() {
     // do sth                // eslint-disable-line
@@ -11,7 +20,11 @@ export default class Home extends Component {
 
   render() {
     return (
-      <div> this is home page </div>
+      <div> {this.props.AppState.msg} </div>
     )
   }
 }
+
+Home.propTypes = {
+  AppState: PropTypes.instanceOf(AppState).isRequired,
+};
