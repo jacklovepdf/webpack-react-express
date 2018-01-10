@@ -9,22 +9,29 @@ import {
   observer,
 } from 'mobx-react'
 import {
-  AppState
+  AppState,
 } from '../../store/appState'
 
 @inject('appState') @observer
 export default class Home extends Component {
   componentDidMount() {
-    // do sth                // eslint-disable-line
+    this.timerId = setInterval(() => {
+      this.props.appState.add();
+    }, 1000)
   }
 
+  componentWillUnmount() {
+    if (this.timerId) {
+      clearTimeout(this.timerId)
+    }
+  }
   render() {
     return (
-      <div> {this.props.AppState.msg} </div>
+      <div> {this.props.appState.msg} </div>
     )
   }
 }
 
 Home.propTypes = {
-  AppState: PropTypes.instanceOf(AppState).isRequired,
+  appState: PropTypes.instanceOf(AppState).isRequired,
 };

@@ -7,7 +7,7 @@ import {
   action,
 } from 'mobx'
 
-class AppState {
+export class AppState {
   @observable count = 0;
   @observable name = 'jacklovepdf';
   @computed get msg() {
