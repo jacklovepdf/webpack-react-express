@@ -14,7 +14,9 @@ const app = express();
 
 const isDev = process.env.NODE_ENV === "dev";
 
-
+app.get('/ab?cd', function(req, res) {
+  res.send('ab?cd');
+});
 if(!isDev){
     // 服务器端生产的模版；
     const serverTemplate = require('../../dist/app.server').default; //warning: require module which export
