@@ -131,6 +131,22 @@ for more information, you can read the official doc。https://webpack.js.org/con
 
 18. template string
 
+19. body-parser
+
+  Parse incoming request bodies in a middleware before your handlers, available under the req.body property.
+  The bodyParser object exposes various factories to create middlewares. 
+  All middlewares will populate the req.body property with the parsed body when the Content-Type request header matches the type option, 
+  or an empty object ({}) if there was no body to parse, the Content-Type was not matched, or an error occurred.
+  https://www.cnblogs.com/chyingp/p/nodejs-learning-express-body-parser.html
+
+20. express-session
+
+
+21. query-string
+
+
+
+
 
 
 

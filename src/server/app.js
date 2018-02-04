@@ -8,15 +8,18 @@ const express = require('express');
 const path = require('path');
 const ReactDOMServer = require('react-dom/server');
 const fs = require('fs');
+const bodyParser = require('body-parser');
 
 // business
 const app = express();
 
 const isDev = process.env.NODE_ENV === "dev";
 
-app.get('/ab?cd', function(req, res) {
-  res.send('ab?cd');
-});
+// parse application/json
+app.use(bodyParser.json());
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded( { extended: false } ));
+
 if(!isDev){
     // 服务器端生产的模版；
     const serverTemplate = require('../../dist/app.server').default; //warning: require module which export
