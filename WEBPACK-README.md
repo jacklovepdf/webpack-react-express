@@ -63,6 +63,9 @@ Since you can use a plugin multiple times in a config for different purposes, yo
 publicPath为""，则生成的html页面中script引用资源的路径为"[name]@[hash].js"，而publicPath为"/public"则引用资源的路径为
 "/public/[name]@[hash].js",如果静态资源部署到cdn上，只需要把publicPath设定为cdn的路径地址；
 
+
+3.webpack-dev-server中publicPath的含义
+  
 4.webpack --config build/webpack.config.js
 options config: 指定webpack的配置文件；
 

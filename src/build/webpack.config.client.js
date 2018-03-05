@@ -1,4 +1,5 @@
 /**
+ *
  * Created by chengyong.lin on 18/3/4.
  */
 
@@ -43,13 +44,13 @@ if(isDev) { // webpack-dev-server配置
     host: '0.0.0.0',
     port: 8888,
     contentBase: path.join(__dirname, '../../dist'),
-    hot: true,
     overlay: {
       errors: true
     },
     historyApiFallback: {
       index: '/public/index.html'
     },
+    publicPath: '/public'
   };
   config.devtool = 'inline-source-map';
 }
