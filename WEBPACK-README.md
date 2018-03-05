@@ -59,15 +59,18 @@ Since you can use a plugin multiple times in a config for different purposes, yo
 2.为什么要使用绝对路径
 
 3.output 中的path宇publicPath的区别
+  path为打包压缩之后资源文件的存放路径，publicPath为资源文件引用的目录；eg, 如果path为path.join(__dirname, '../dist'),
+publicPath为""，则生成的html页面中script引用资源的路径为"[name]@[hash].js"，而publicPath为"/public"则引用资源的路径为
+"/public/[name]@[hash].js",如果静态资源部署到cdn上，只需要把publicPath设定为cdn的路径地址；
 
 4.webpack --config build/webpack.config.js
 options config: 指定webpack的配置文件；
 
 
-5. babel的配置文件
-
+5. babel的配置文件.babelrc
+对最新es6,es7以及jsx语法的编译需要配置babel, 其中presets含义是babel支持的语法版本；
 {
-  "presets": [
+  "presets": [ 
     ["es2015", { "loose": true }],
     "stage-1",
     "react"
@@ -90,15 +93,10 @@ presets指定babel支持的语法
 
 
 9. cross-env
-
+  设置node的环境变量；
+  
 10. memory-fs
 内存读写
-
-
-11. webpack-dev-server
-    DevServer启动的服务提供的资源并没有打包出来放在此盘中，而是存在内存中。
-for more information, you can read the official doc。https://webpack.js.org/configuration/dev-server/
-
 
 
 
@@ -143,6 +141,19 @@ for more information, you can read the official doc。https://webpack.js.org/con
 
 
 21. query-string
+
+
+
+22. webpack中重要的配置
+  （1）webpack-dev-server
+    The webpack-dev-server是webpack官方提供给我们的一个插件，其作用主要包括两个方面，一方面通过webpack的配置很方便的启动一个web服务器，更重要的是，
+当源文件发生变动的时候，能够实时自动的去编译源代码，可以大大提高效率；DevServer启动的服务提供的资源并没有打包出来放在此盘中，而是存在内存中。
+for more information, you can read the official doc。https://webpack.js.org/configuration/dev-server/
+
+  （2）hot-module-replacement
+    每次改动代码之后，可以在不刷新浏览器的情况下，看到改动之后的效果，可以大大提高效率；
+
+
 
 
 
