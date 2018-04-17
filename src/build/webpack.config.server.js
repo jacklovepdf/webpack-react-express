@@ -18,6 +18,14 @@ module.exports = {
   },
   module: {
     rules: [
+      // {
+      //   enforce: 'pre', //编译之前强制执行
+      //   test: /.(js|jsx)$/,
+      //   loader: 'eslint-loader',
+      //   exclude: [
+      //     path.join(__dirname, '../../node_modules')
+      //   ]
+      // },
       {
         test: /\.jsx$/,
         loader: 'babel-loader'

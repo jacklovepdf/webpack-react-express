@@ -9,7 +9,7 @@ const path = require('path');
 const memoryFs = require('memory-fs'); // 内存读写
 const ReactDOMServer = require('react-dom/server');
 const proxy = require('http-proxy-middleware');
-const serverConfig = require('../../../build/webpack.config.server');
+const serverConfig = require('../../build/webpack.config.server');
 
 // 获取本地webpack-dev-server中提供的实时文件
 const getTemplte = () => {
@@ -49,7 +49,7 @@ serverCompiler.watch({}, (err, status) => {
     );
     const bundle = mfs.readFileSync(bundlePath, 'utf-8'); //string
     const m = new Module();
-    m._compile(bundle, 'app.server.js');
+    m._compile(bundle, 'server-entry.js');
     serverBundle = m.exports.default;
 });
 
@@ -62,7 +62,8 @@ module.exports = function (app) {
     app.get('*', function (req, res) {
         getTemplte().then((template) =>{
             const content = ReactDOMServer.renderToString(serverBundle);
-            res.send(template.replace("<server></server>", content))
+            const resContent = template.replace("<server></server>", content);
+            res.send(resContent);
         })
     });
 };

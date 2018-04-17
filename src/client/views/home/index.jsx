@@ -3,35 +3,31 @@
  */
 
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import {
-  inject,
-  observer,
-} from 'mobx-react'
-import {
-  AppState,
-} from '../../store/appState'
 
-@inject('appState') @observer
 export default class Home extends Component {
-  componentDidMount() {
-    this.timerId = setInterval(() => {
-      this.props.appState.add();
-    }, 1000)
+  constructor(props){
+    super(props);
+    this.add = this.add.bind(this);
   }
 
-  componentWillUnmount() {
-    if (this.timerId) {
-      clearTimeout(this.timerId)
-    }
-  }
   render() {
+    let obj1 = {name: "jack", age: 14};
     return (
-      <div> {this.props.appState.msg} </div>
+      <div onClick={this.add} >
+        <div>the sum of 1 and 2 is:</div>
+        <div>{(this.props.sumState || {}).sum || ''} </div>
+        <ComponentA {...obj1}/>
+      </div>
     )
+  }
+
+  add(){
+    this.props.getNumSum(1,2)
   }
 }
 
-Home.propTypes = {
-  appState: PropTypes.instanceOf(AppState).isRequired,
-};
+class ComponentA extends Component {
+  render() {
+    return <div>{this.props.name}</div>
+  }
+}

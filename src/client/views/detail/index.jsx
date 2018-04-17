@@ -5,9 +5,6 @@
 import React, { Component } from 'react'
 
 export default class Detail extends Component {
-  componentDidMount() {
-    // do sth           // eslint-disable-line
-  }
 
   render() {
     return (
